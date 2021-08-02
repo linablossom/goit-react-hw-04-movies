@@ -29,7 +29,7 @@ class Cast extends Component {
     return (
       <ul>
         {this.state.cast.map(
-          ({ id, profile_path, original_name, character, name }) => (
+          ({ cast_id: id, profile_path, original_name, character, name }) => (
             <li key={`cast-${id}`}>
               {profile_path ? (
                 <img src={BASE_IMG_URL + profile_path} alt={name} />

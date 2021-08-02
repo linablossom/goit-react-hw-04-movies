@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { MoviesListStyled } from "./MoviesListStyled";
 
-const MoviesList = ({ movies }) => {
+const MoviesList = ({ movies, prevPath }) => {
   return (
     <MoviesListStyled className="homeList">
       {movies.map(({ title, id }) => {
@@ -11,7 +11,7 @@ const MoviesList = ({ movies }) => {
             <NavLink
               className="homeListLink"
               activeClassName="activeHomeListLink"
-              to={`/movies/${id}`}
+              to={{ pathname: `/movies/${id}`, state: { prevPath } }}
               exact
             >
               {title}

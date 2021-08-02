@@ -1,28 +1,8 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 const BASE_IMG_URL = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/";
 
 class MovieDetailsPage extends Component {
-  state = {
-    loaded: false,
-    loading: false,
-    details: [],
-    id: 451048,
-  };
-
-  async componentDidMount() {
-    try {
-      this.setState({ loading: true });
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/${this.props.movieId}?api_key=24f3be077b2e648be81bca41e098d522`
-      );
-      this.setState({ details: response.data, loading: false, loaded: true });
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   render() {
     const {
       poster_path,
@@ -31,8 +11,7 @@ class MovieDetailsPage extends Component {
       vote_average,
       overview,
       genres,
-    } = this.state.details;
-    if (!this.state.loaded || this.state.loading) return null;
+    } = this.props.details;
 
     const date = new Date(release_date).getFullYear();
     const userScore = Math.floor(+vote_average * 10);

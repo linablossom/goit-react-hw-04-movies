@@ -1,7 +1,7 @@
 import React from "react";
 import { HeaderStyled } from "./HeaderStyled";
-import Navigation from "./Navigation";
-import { mainRoutes } from "../routes/mainRoutes";
+import Navigation from "../Navigation/Navigation";
+import { mainRoutes } from "../../routes/mainRoutes";
 
 const Header = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import ContentSwitcher from "./ContentSwitcher";
-import { mainRoutes } from "../routes/mainRoutes";
+import ContentSwitcher from "../ContentSwitcher";
+import { mainRoutes } from "../../routes/mainRoutes";
 import { MainStyled } from "./MainStyled";
 
 const Main = () => {

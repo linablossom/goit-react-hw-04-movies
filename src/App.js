@@ -1,39 +1,15 @@
-import React, { Component, Suspense } from "react";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import React, { Suspense } from "react";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
-class App extends Component {
-  state = {
-    trending: [],
-  };
-  /*
-  componentDidMount() {
-    this.getMovies();
-  }
-
-  getMovies = async () => {
-    try {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/trending/movie/day?api_key=24f3be077b2e648be81bca41e098d522`
-      );
-      this.setState({ trending: response.data.results });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-*/
-  render() {
-    // const { trending } = this.state;
-    // console.log(this.state.trending);
-    // this.getMovies();
-    return (
-      <Suspense fallback={<div>Loading..</div>}>
-        <Header />
-        <Main />
-      </Suspense>
-    );
-  }
-}
+const App = () => {
+  return (
+    <Suspense fallback={<div>Loading..</div>}>
+      <Header />
+      <Main />
+    </Suspense>
+  );
+};
 
 // https://developers.themoviedb.org/3/trending/get-trending
 

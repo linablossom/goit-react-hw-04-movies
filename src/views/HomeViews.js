@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import MoviesList from "../components/MoviesList";
+import MoviesList from "../components/MoviesList/MoviesList";
 
 class HomeViews extends Component {
   state = {
@@ -25,7 +25,7 @@ class HomeViews extends Component {
   render() {
     const { trending } = this.state;
 
-    return <MoviesList movies={trending} />;
+    return <MoviesList movies={trending} prevPath={"/"} />;
   }
 }
 
